@@ -1,12 +1,17 @@
+// Import necessary libraries and icons
 import React from 'react'
 import './Descriptions.css'
 import { FaArrowUp, FaArrowDown, FaWind } from "react-icons/fa";
 import { BiHappy } from "react-icons/bi";
 import { MdCompress, MdOutlineWaterDrop } from "react-icons/md";
 
+// Functional component to display weather descriptions
 const Descriptions = ({ weather, units }) => {
+    // Determine temperature and wind units based on the selected system (metric or imperial)
     const tempUnit = units === "metric" ? "°C" : "°F";
     const windUnit = units === "metric" ? "m/s" : "m/h";
+
+    // Create an array of description cards with relevant data
     const cards = [
         {
           id: 1,
@@ -50,8 +55,10 @@ const Descriptions = ({ weather, units }) => {
           data: weather.speed.toFixed(),
           unit: windUnit,
         },
-      ];
-      return (
+    ];
+
+    // Render the description cards using map
+    return (
         <div className="section section__descriptions">
           {cards.map(({ id, icon, title, data, unit }) => (
             <div key={id} className="card">
@@ -63,7 +70,8 @@ const Descriptions = ({ weather, units }) => {
             </div>
           ))}
         </div>
-      );
-    };
-    
-    export default Descriptions;
+    );
+};
+
+
+export default Descriptions;
