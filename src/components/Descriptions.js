@@ -1,17 +1,16 @@
-// Import necessary libraries and icons
 import React from 'react'
 import './Descriptions.css'
 import { FaArrowUp, FaArrowDown, FaWind } from "react-icons/fa";
 import { BiHappy } from "react-icons/bi";
 import { MdCompress, MdOutlineWaterDrop } from "react-icons/md";
 
-// Functional component to display weather descriptions
+// Function to display weather descriptions
 const Descriptions = ({ weather, units }) => {
     // Determine temperature and wind units based on the selected system (metric or imperial)
     const tempUnit = units === "metric" ? "°C" : "°F";
     const windUnit = units === "metric" ? "m/s" : "m/h";
 
-    // Create an array of description cards with relevant data
+    // array of description cards with relevant data
     const cards = [
         {
           id: 1,
